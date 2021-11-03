@@ -10,8 +10,8 @@ Welcome to the [UN / DISI](http://www.ingenieria.unal.edu.co/dependencias/depart
 ## Members
 
 Laura Gordillo<br>
-Jonathan Carrillo\n
-David Ramirez\n
+Jonathan Carrillo<br>
+David Ramirez<br>
 
 ## Goal
 
