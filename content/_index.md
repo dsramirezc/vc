@@ -7,6 +7,12 @@ type: docs
 
 Welcome to the [UN / DISI](http://www.ingenieria.unal.edu.co/dependencias/departamentos/departamento-de-ingenieria-de-sistemas-e-industrial) _visual computing_ course template site.
 
+##Members
+
+Laura Gordillo
+Jonathan Carrillo
+David Ramirez
+
 ## Goal
 
 To study the process of creation and manipulation of a digital image of a modern visual application, using current hardware.
