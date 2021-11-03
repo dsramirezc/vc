@@ -7,7 +7,7 @@ type: docs
 
 Welcome to the [UN / DISI](http://www.ingenieria.unal.edu.co/dependencias/departamentos/departamento-de-ingenieria-de-sistemas-e-industrial) _visual computing_ course template site.
 
-##Members
+## Members
 
 Laura Gordillo
 Jonathan Carrillo
