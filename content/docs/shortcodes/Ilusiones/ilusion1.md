@@ -1,0 +1,1 @@
+p5 `ilusion1` [shortcodes](https://gohugo.io/content-management/shortcodes/) embed [p5.js](https://p5js.org/) code within a [div element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div). There are two p5 `div` shortcodes: [p5-div](#p5-div) and [p5-instance-div](#p5-instance-div).
