@@ -1,8 +1,10 @@
-## 3D Illusion with Squares
+## Ilusión Cognitiva de Percepción de Profundidad
 
-This illusion was inspired by this [video](https://www.youtube.com/watch?v=BmuhsXAbsB0)
+Ésta ilusión fué inspirada por éste [vídeo](https://www.youtube.com/watch?v=BmuhsXAbsB0)
 
-It illustrates how using only 2D geometry objects one can create the illusion of a 3D square that goes beyond the screen 
+Las ilusiones cognitivas surgen por la interacción con supuestos sobre el mundo, lo que lleva a "inferencias inconscientes", una idea sugerida por primera vez en el siglo XIX por el físico y médico alemán Hermann Helmholtz.
+
+Las ilusiones pueden basarse en la capacidad de un individuo para ver en tres dimensiones, aunque la imagen que llega a la retina es solo bidimensional. En ésta ilusión podemos observar cómo el cuadrado del centro parece sobresalir de los demás
 
 {{< p5-instance-div id="square31" >}}
 
@@ -56,7 +58,7 @@ It illustrates how using only 2D geometry objects one can create the illusion of
 
 {{< /p5-instance-div >}}
 
-### By changing the parameters of the code the illusion may be different
+### Cambiando algunos de los parámetros del código podemos obtener una ilusión diferente
 
 {{< p5-instance-div id="square63" >}}
 
