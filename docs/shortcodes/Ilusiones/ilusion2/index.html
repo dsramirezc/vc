@@ -2,23 +2,23 @@
 <head>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=description content="3D Illusion with Squares #  This illusion was inspired by this video
-It illustrates how using only 2D geometry objects one can create the illusion of a 3D square that goes beyond the screen
-    new p5((p5) = { //n is of the form 8 * x - 1 const n = 31; const size = 620; p5.setup = function() { p5.createCanvas(size, size); }; p5.draw = function() { const step = size / n; const mid = Math.">
+<meta name=description content="Ilusión Cognitiva de Percepción de Profundidad #  Ésta ilusión fué inspirada por éste vídeo
+Las ilusiones cognitivas surgen por la interacción con supuestos sobre el mundo, lo que lleva a &ldquo;inferencias inconscientes&rdquo;, una idea sugerida por primera vez en el siglo XIX por el físico y médico alemán Hermann Helmholtz.
+Las ilusiones pueden basarse en la capacidad de un individuo para ver en tres dimensiones, aunque la imagen que llega a la retina es solo bidimensional.">
 <meta name=theme-color content="#FFFFFF">
 <meta name=color-scheme content="light dark"><meta property="og:title" content>
-<meta property="og:description" content="3D Illusion with Squares #  This illusion was inspired by this video
-It illustrates how using only 2D geometry objects one can create the illusion of a 3D square that goes beyond the screen
-    new p5((p5) = { //n is of the form 8 * x - 1 const n = 31; const size = 620; p5.setup = function() { p5.createCanvas(size, size); }; p5.draw = function() { const step = size / n; const mid = Math.">
+<meta property="og:description" content="Ilusión Cognitiva de Percepción de Profundidad #  Ésta ilusión fué inspirada por éste vídeo
+Las ilusiones cognitivas surgen por la interacción con supuestos sobre el mundo, lo que lleva a &ldquo;inferencias inconscientes&rdquo;, una idea sugerida por primera vez en el siglo XIX por el físico y médico alemán Hermann Helmholtz.
+Las ilusiones pueden basarse en la capacidad de un individuo para ver en tres dimensiones, aunque la imagen que llega a la retina es solo bidimensional.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://dsramirezc.github.io/vc/docs/shortcodes/Ilusiones/ilusion2/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2021-11-15T21:36:02-05:00">
+<meta property="article:modified_time" content="2021-11-16T22:30:12-05:00">
 <title>Ilusion2 | Visual Computing</title>
 <link rel=manifest href=/vc/manifest.json>
 <link rel=icon href=/vc/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/vc/book.min.89a77f7e702a8626749b948bbfb01109823daf6c1246ca407d1378833494c402.css integrity="sha256-iad/fnAqhiZ0m5SLv7ARCYI9r2wSRspAfRN4gzSUxAI=" crossorigin=anonymous>
 <script defer src=/vc/flexsearch.min.js></script>
-<script defer src=/vc/en.search.min.7274033815567f17caebbb68748cb5720f3200ddd9485ec8b8ef983c53500c6a.js integrity="sha256-cnQDOBVWfxfK67todIy1cg8yAN3ZSF7IuO+YPFNQDGo=" crossorigin=anonymous></script>
+<script defer src=/vc/en.search.min.f67f1883e7725d7c64bd17f49ecb7c8c3c8b04f17eeeb8ff2bf76da1249a26b5.js integrity="sha256-9n8Yg+dyXXxkvRf0nst8jDyLBPF+7rj/K/dtoSSaJrU=" crossorigin=anonymous></script>
 </head>
 <body dir=ltr>
 <input type=checkbox class="hidden toggle" id=menu-control>
@@ -122,9 +122,9 @@ Blog
 <ul>
 <li>
 <ul>
-<li><a href=#3d-illusion-with-squares>3D Illusion with Squares</a>
+<li><a href=#ilusión-cognitiva-de-percepción-de-profundidad>Ilusión Cognitiva de Percepción de Profundidad</a>
 <ul>
-<li><a href=#by-changing-the-parameters-of-the-code-the-illusion-may-be-different>By changing the parameters of the code the illusion may be different</a></li>
+<li><a href=#cambiando-algunos-de-los-parámetros-del-código-podemos-obtener-una-ilusión-diferente>Cambiando algunos de los parámetros del código podemos obtener una ilusión diferente</a></li>
 </ul>
 </li>
 </ul>
@@ -133,19 +133,20 @@ Blog
 </nav>
 </aside>
 </header>
-<article class=markdown><h2 id=3d-illusion-with-squares>
-3D Illusion with Squares
-<a class=anchor href=#3d-illusion-with-squares>#</a>
+<article class=markdown><h2 id=ilusión-cognitiva-de-percepción-de-profundidad>
+Ilusión Cognitiva de Percepción de Profundidad
+<a class=anchor href=#ilusi%c3%b3n-cognitiva-de-percepci%c3%b3n-de-profundidad>#</a>
 </h2>
-<p>This illusion was inspired by this <a href="https://www.youtube.com/watch?v=BmuhsXAbsB0">video</a></p>
-<p>It illustrates how using only 2D geometry objects one can create the illusion of a 3D square that goes beyond the screen</p>
+<p>Ésta ilusión fué inspirada por éste <a href="https://www.youtube.com/watch?v=BmuhsXAbsB0">vídeo</a></p>
+<p>Las ilusiones cognitivas surgen por la interacción con supuestos sobre el mundo, lo que lleva a &ldquo;inferencias inconscientes&rdquo;, una idea sugerida por primera vez en el siglo XIX por el físico y médico alemán Hermann Helmholtz.</p>
+<p>Las ilusiones pueden basarse en la capacidad de un individuo para ver en tres dimensiones, aunque la imagen que llega a la retina es solo bidimensional. En ésta ilusión podemos observar cómo el cuadrado del centro parece sobresalir de los demás</p>
 <script src=https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js></script>
 <script src=https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js></script>
 <div id=square31></div>
 <script>new p5(a=>{const c=31,b=620;a.setup=function(){a.createCanvas(b,b)},a.draw=function(){var h,i,e,g,f,l,m,j,n;const k=b/c,d=Math.floor(c/2);a.noStroke(),a.background(0);for(h=0;h<2;++h)for(i=0;i<2;++i)for(e=0;2*e<d;++e){const b=d-2*e+1;for(g=0;g<b;++g)for(f=0;f<b;++f)(g==0||g==b-1||f==0||f==b-1)&&(l=g+e+h*d,m=f+e+i*d,j=e%2,n=Math.max(Math.abs(l-d),Math.abs(m-d)),2*n<d&&(j=(j+1)%2),j==1&&a.square(l*k,m*k,k))}}},"square31")</script>
-<h3 id=by-changing-the-parameters-of-the-code-the-illusion-may-be-different>
-By changing the parameters of the code the illusion may be different
-<a class=anchor href=#by-changing-the-parameters-of-the-code-the-illusion-may-be-different>#</a>
+<h3 id=cambiando-algunos-de-los-parámetros-del-código-podemos-obtener-una-ilusión-diferente>
+Cambiando algunos de los parámetros del código podemos obtener una ilusión diferente
+<a class=anchor href=#cambiando-algunos-de-los-par%c3%a1metros-del-c%c3%b3digo-podemos-obtener-una-ilusi%c3%b3n-diferente>#</a>
 </h3>
 <script src=https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js></script>
 <script src=https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js></script>
@@ -154,9 +155,9 @@ By changing the parameters of the code the illusion may be different
 </article>
 <footer class=book-footer>
 <div class="flex flex-wrap justify-between">
-<div><a class="flex align-center" href=https://dsramirezc.github.io/vc/commit/2c77709cdee30b911a155e91f27f6c4223d6d088 title="Last modified by joacarrilloco | November 16, 2021" target=_blank rel=noopener>
+<div><a class="flex align-center" href=https://dsramirezc.github.io/vc/commit/4d2449e3334f126e4842b49c57f9d65cce43129d title="Last modified by joacarrilloco | November 17, 2021" target=_blank rel=noopener>
 <img src=/vc/svg/calendar.svg class=book-icon alt=Calendar>
-<span>November 16, 2021</span>
+<span>November 17, 2021</span>
 </a>
 </div>
 </div>
@@ -172,9 +173,9 @@ By changing the parameters of the code the illusion may be different
 <ul>
 <li>
 <ul>
-<li><a href=#3d-illusion-with-squares>3D Illusion with Squares</a>
+<li><a href=#ilusión-cognitiva-de-percepción-de-profundidad>Ilusión Cognitiva de Percepción de Profundidad</a>
 <ul>
-<li><a href=#by-changing-the-parameters-of-the-code-the-illusion-may-be-different>By changing the parameters of the code the illusion may be different</a></li>
+<li><a href=#cambiando-algunos-de-los-parámetros-del-código-podemos-obtener-una-ilusión-diferente>Cambiando algunos de los parámetros del código podemos obtener una ilusión diferente</a></li>
 </ul>
 </li>
 </ul>
