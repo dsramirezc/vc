@@ -2,19 +2,21 @@
 <head>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=description content="p5 ilusion1 shortcodes embed p5.js code within a div element. There are two p5 div shortcodes: p5-div and p5-instance-div.">
+<meta name=description content="Ilusión Óptica de Hermann o ilusión de cuadrícula #  Una ilusión de cuadrícula es cualquier tipo de rejilla que engaña la visión de una persona. Las dos ilusiones más frecuentes son la rejilla de Hermann y la rejilla centellante.
+    new p5((p5) = { const squares = 10; const size = 500; const dxy=size/squares; const dy=dxy*0.2; const radio=dy/2; p5.setup = function() { p5.createCanvas(size, size); }; p5.draw = function() { p5.">
 <meta name=theme-color content="#FFFFFF">
 <meta name=color-scheme content="light dark"><meta property="og:title" content>
-<meta property="og:description" content="p5 ilusion1 shortcodes embed p5.js code within a div element. There are two p5 div shortcodes: p5-div and p5-instance-div.">
+<meta property="og:description" content="Ilusión Óptica de Hermann o ilusión de cuadrícula #  Una ilusión de cuadrícula es cualquier tipo de rejilla que engaña la visión de una persona. Las dos ilusiones más frecuentes son la rejilla de Hermann y la rejilla centellante.
+    new p5((p5) = { const squares = 10; const size = 500; const dxy=size/squares; const dy=dxy*0.2; const radio=dy/2; p5.setup = function() { p5.createCanvas(size, size); }; p5.draw = function() { p5.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://dsramirezc.github.io/vc/docs/shortcodes/Ilusiones/ilusion1/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2021-11-15T16:22:53-05:00">
+<meta property="article:modified_time" content="2021-11-16T21:31:33-05:00">
 <title>Ilusion1 | Visual Computing</title>
 <link rel=manifest href=/vc/manifest.json>
 <link rel=icon href=/vc/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/vc/book.min.89a77f7e702a8626749b948bbfb01109823daf6c1246ca407d1378833494c402.css integrity="sha256-iad/fnAqhiZ0m5SLv7ARCYI9r2wSRspAfRN4gzSUxAI=" crossorigin=anonymous>
 <script defer src=/vc/flexsearch.min.js></script>
-<script defer src=/vc/en.search.min.8eedf80d54064992d99ab8ec91d0546cf41acb0e37dfeced4014e30ded58d29c.js integrity="sha256-ju34DVQGSZLZmrjskdBUbPQayw433+ztQBTjDe1Y0pw=" crossorigin=anonymous></script>
+<script defer src=/vc/en.search.min.7274033815567f17caebbb68748cb5720f3200ddd9485ec8b8ef983c53500c6a.js integrity="sha256-cnQDOBVWfxfK67todIy1cg8yAN3ZSF7IuO+YPFNQDGo=" crossorigin=anonymous></script>
 </head>
 <body dir=ltr>
 <input type=checkbox class="hidden toggle" id=menu-control>
@@ -114,16 +116,61 @@ Blog
 </label>
 </div>
 <aside class="hidden clearfix">
-<nav id=TableOfContents></nav>
+<nav id=TableOfContents>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href=#ilusión-óptica-de-hermann-o-ilusión-de-cuadrícula>Ilusión Óptica de Hermann o ilusión de cuadrícula</a></li>
+<li><a href=#ilusión-de-centelleo-de-la-rejilla>Ilusión de centelleo de la rejilla</a></li>
+<li><a href=#diferencias-entre-las-ilusiones-de-centelleo-de-la-rejilla-y-hermann>Diferencias entre las ilusiones de centelleo de la rejilla y Hermann</a></li>
+<li><a href=#teorias>Teorias</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
 </aside>
 </header>
-<article class=markdown><p>p5 <code>ilusion1</code> <a href=https://gohugo.io/content-management/shortcodes/>shortcodes</a> embed <a href=https://p5js.org/>p5.js</a> code within a <a href=https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div>div element</a>. There are two p5 <code>div</code> shortcodes: <a href=#p5-div>p5-div</a> and <a href=#p5-instance-div>p5-instance-div</a>.</p>
+<article class=markdown><h3 id=ilusión-óptica-de-hermann-o-ilusión-de-cuadrícula>
+Ilusión Óptica de Hermann o ilusión de cuadrícula
+<a class=anchor href=#ilusi%c3%b3n-%c3%b3ptica-de-hermann-o-ilusi%c3%b3n-de-cuadr%c3%adcula>#</a>
+</h3>
+<p>Una ilusión de cuadrícula es cualquier tipo de rejilla que engaña la visión de una persona. Las dos ilusiones más frecuentes son la rejilla de Hermann y la rejilla centellante.</p>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js></script>
+<div id=ilusion-cuadricula1></div>
+<script>new p5(a=>{const e=10,b=500,d=b/e,c=d*.2,f=c/2;a.setup=function(){a.createCanvas(b,b)},a.draw=function(){a.noStroke(),a.background(0);for(var e=0;e<b;e+=d-c)a.fill(255,255,255),a.rect(0,e,b,c),a.rect(e,0,c,b)}},"ilusion-cuadricula1")</script>
+<h3 id=ilusión-de-centelleo-de-la-rejilla>
+Ilusión de centelleo de la rejilla
+<a class=anchor href=#ilusi%c3%b3n-de-centelleo-de-la-rejilla>#</a>
+</h3>
+<p>La ilusión de centelleo de la rejilla es una ilusión óptica, descubierta por E. Lingelbach en 1994, que por lo general se considera una variación de la ilusión de la cuadrícula de Hermann.</p>
+<p>Se construye mediante la superposición de discos blancos en las intersecciones de barras grises ortogonales en un fondo negro. Puntos oscuros parecen aparecer y desaparecer rápidamente en las intersecciones aleatorias, de ahí la etiqueta “centelleante”. Cuando una persona mantiene sus ojos directamente en una sola intersección, no aparece el punto oscuro. Los puntos oscuros desaparecen si uno está demasiado cerca o demasiado lejos de la imagen</p>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js></script>
+<div id=ilusion-cuadricula2></div>
+<script>new p5(a=>{const f=10,b=500,e=b/f,d=e*.2,c=d/2;a.setup=function(){a.createCanvas(b,b)},a.draw=function(){var f,g;a.noStroke(),a.background(0);for(f=0;f<b;f+=e-d){a.fill(128,128,128),a.rect(0,f,b,d),a.rect(f,0,d,b);for(g=0;g<b;g+=e-d)a.fill(255,255,255),a.circle(g+c,f+c,c*2+2),a.circle(f+c,g+c,c*2+2)}}},"ilusion-cuadricula2")</script>
+<h3 id=diferencias-entre-las-ilusiones-de-centelleo-de-la-rejilla-y-hermann>
+Diferencias entre las ilusiones de centelleo de la rejilla y Hermann
+<a class=anchor href=#diferencias-entre-las-ilusiones-de-centelleo-de-la-rejilla-y-hermann>#</a>
+</h3>
+<p>La diferencia entre la ilusión rejilla Hermann y la ilusión de centelleo es que en esta ultima las ilusiones brillantes tienen puntos en el lugar en el cruce, mientras que no hay puntos existentes en las intersecciones de las ilusiones de la red Hermann. Ya que son tan similares, los dos nombres son comúnmente utilizados indistintamente. Pero la ilusión de centelleo no se produce con una intersección aislada, como en el caso de la rejilla de Hermann; observaciones sugieren que se requiere un mínimo de 3 × 3 intersecciones espaciados uniformemente con discos superpuestos para producir el efecto. Este requisito sugiere la participación de los procesos globales del tipo propuesto para la vinculación y agrupación de características de una imagen, además de los procesos locales.</p>
+<h3 id=teorias>
+Teorias
+<a class=anchor href=#teorias>#</a>
+</h3>
+<p>El efecto de ambas ilusiones ópticas a menudo se explica por un proceso llamado inhibición neural lateral. La intensidad en un punto en el sistema visual no es simplemente el resultado de un único receptor o célula, sino el resultado de un grupo de receptores o células que responden a la presentación de los estímulos en lo que se llama un campo receptivo.</p>
+<p>Las células ganglionares de la retina están en íntimo contacto con los fotorreceptores en un área de la retina, el área en el espacio físico al que responden los fotorreceptores es el “campo receptor” de la célula ganglionar. En el centro del campo receptivo los fotorreceptores individuales excitan la célula ganglionar cuando detectan el aumento de la luminancia. Los fotorreceptores en los alrededores inhiben las células ganglionares. Por lo tanto, desde un punto en una intersección está rodeado de más intensidad que un punto en el medio de una línea, la intersección aparece más oscura debido a la mayor inhibición.</p>
+<p>Hay fuertes indicios de que la teoría de las células ganglionares de la retina es insostenible. Por ejemplo, haciendo que las líneas de la rejilla onduladas en lugar de rectas elimina tanto la rejilla de Hermann y ilusiones centelleo de la rejilla.</p>
 </article>
 <footer class=book-footer>
 <div class="flex flex-wrap justify-between">
-<div><a class="flex align-center" href=https://dsramirezc.github.io/vc/commit/7cf035f4ffa4788b9a3b1ba3c6a51fedafdfb672 title="Last modified by stephan.ramirez | November 15, 2021" target=_blank rel=noopener>
+<div><a class="flex align-center" href=https://dsramirezc.github.io/vc/commit/b80143322b9c67d3b47169bb2275fc7795548eea title="Last modified by stephan.ramirez | November 17, 2021" target=_blank rel=noopener>
 <img src=/vc/svg/calendar.svg class=book-icon alt=Calendar>
-<span>November 15, 2021</span>
+<span>November 17, 2021</span>
 </a>
 </div>
 </div>
@@ -135,7 +182,22 @@ Blog
 </div>
 <aside class=book-toc>
 <div class=book-toc-content>
-<nav id=TableOfContents></nav>
+<nav id=TableOfContents>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href=#ilusión-óptica-de-hermann-o-ilusión-de-cuadrícula>Ilusión Óptica de Hermann o ilusión de cuadrícula</a></li>
+<li><a href=#ilusión-de-centelleo-de-la-rejilla>Ilusión de centelleo de la rejilla</a></li>
+<li><a href=#diferencias-entre-las-ilusiones-de-centelleo-de-la-rejilla-y-hermann>Diferencias entre las ilusiones de centelleo de la rejilla y Hermann</a></li>
+<li><a href=#teorias>Teorias</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
 </div>
 </aside>
 </main>
