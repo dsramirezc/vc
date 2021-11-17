@@ -2,7 +2,7 @@
 
 Hay un gran grupo de ilusiones en las que las líneas que se cruzan en ángulos, particularmente los ángulos agudos, son un factor decisivo en la ilusión. Wundt (1898) llamó la atención sobre esto; los ángulos agudos están sobreestimados y los ángulos obtusos están levemente subestimados. 
 
-{{< p5-global-iframe id="laura" width="600" height="400" >}}
+{{< p5-global-iframe id="laura" width="620" height="450" >}}
 let angle=80
 function setup() {
   angleMode(DEGREES); 
@@ -41,3 +41,18 @@ function changeAngle(){
    angle=angle+5
 }
 {{< /p5-global-iframe >}}
+"El problema de encontrar los puntos de intersección se puede formular como la solución de un sistema de ecuaciones lineales. Esto permite un análisis limpio de las influencias de los diferentes parámetros en las soluciones y, por lo tanto, proporciona un poderoso modelo predictivo."
+![Alt text](https://raw.githubusercontent.com/lgordillom/imagenes/main/%C3%ADndice.jpeg)
+En experimentos con esta ilusión también se ha encontrado que el efecto disminuye con un agudo gradual
+ángulo entre la línea principal y los oblicuos, El valor donde se produce el máximo está en algún punto intermedio. 10 ° y 30 °; 
+![Alt text](https://raw.githubusercontent.com/lgordillom/imagenes/main/%C3%ADndice2.jpeg)
+
+## Referencia
+Cornelia Fermüller, Henrik Malm,
+Uncertainty in visual processes predicts geometrical optical illusions,
+Vision Research,
+Volume 44, Issue 7,
+2004,
+Pages 727-749,
+ISSN 0042-6989,
+https://doi.org/10.1016/j.visres.2003.09.038.
