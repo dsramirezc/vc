@@ -1,10 +1,18 @@
-## Ilusión Cognitiva de Percepción de Profundidad
+## Rasterización de Circunferencias
 
-Ésta ilusión fué inspirada por éste [vídeo](https://www.youtube.com/watch?v=BmuhsXAbsB0)
+Para la rasterización de una circunferencia podemos calcular los puntos que van a hacer parte del borde en un único octante y simultaneamente añadir de forma análoga los puntos de los otros octantes, en la animación aquí presentada el único octante que se calcula de forma directa es el de color verde y los demás son añadidos en base a dicho cálculo.
 
-Las ilusiones cognitivas surgen por la interacción con supuestos sobre el mundo, lo que lleva a "inferencias inconscientes", una idea sugerida por primera vez en el siglo XIX por el físico y médico alemán Hermann Helmholtz.
+El proceso comienza en el punto `P=(0,r)`, a partir de allí en cada iteración se va calculando el punto correspondiente al octante verde si se aumenta la coordenada x, Dado que al aumentar x en uno `(++P.x)` el valor de `P.y` puede o bien permanecer igual o bien disminuir en uno, la decisión se reduce a determinar cuál de los puntos `(P.x+1,P.y)` ó `(P.x+1,P.y-1)` es el mejor candidato para estar en la circunferencia.
 
-Las ilusiones pueden basarse en la capacidad de un individuo para ver en tres dimensiones, aunque la imagen que llega a la retina es solo bidimensional. En ésta ilusión podemos observar cómo el cuadrado del centro parece sobresalir de los demás
+Para determinar cuál es el mejor candidato se pueden usar diferentes reglas, la aquí presentada se inclina por el punto que tenga el menor error absoluto
+
+{{< columns >}}
+
+{{< katex display >}}
+error = | r^2 - x^2 - y^2 |
+{{< /katex >}}
+
+{{< /columns >}}
 
 {{< p5-instance-div id="rasterizing" >}}
 
@@ -63,7 +71,7 @@ Las ilusiones pueden basarse en la capacidad de un individuo para ver en tres di
         
         if( counter < 0 ) return;
 
-        if( counter % Math.ceil( 300 / n ) ) return;
+        if( counter % Math.ceil( 500 / n ) ) return;
         
 
         p5.fill( 200 );
