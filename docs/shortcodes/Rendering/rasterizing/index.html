@@ -2,23 +2,21 @@
 <head>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=description content="Ilusión Cognitiva de Percepción de Profundidad #  Ésta ilusión fué inspirada por éste vídeo
-Las ilusiones cognitivas surgen por la interacción con supuestos sobre el mundo, lo que lleva a &ldquo;inferencias inconscientes&rdquo;, una idea sugerida por primera vez en el siglo XIX por el físico y médico alemán Hermann Helmholtz.
-Las ilusiones pueden basarse en la capacidad de un individuo para ver en tres dimensiones, aunque la imagen que llega a la retina es solo bidimensional.">
+<meta name=description content="Rasterización de Circunferencias #  Para la rasterización de una circunferencia podemos calcular los puntos que van a hacer parte del borde en un único octante y simultaneamente añadir de forma análoga los puntos de los otros octantes, en la animación aquí presentada el único octante que se calcula de forma directa es el de color verde y los demás son añadidos en base a dicho cálculo.
+El proceso comienza en el punto P=(0,r), a partir de allí en cada iteración se va calculando el punto correspondiente al octante verde si se aumenta la coordenada x, Dado que al aumentar x en uno (++P.">
 <meta name=theme-color content="#FFFFFF">
 <meta name=color-scheme content="light dark"><meta property="og:title" content>
-<meta property="og:description" content="Ilusión Cognitiva de Percepción de Profundidad #  Ésta ilusión fué inspirada por éste vídeo
-Las ilusiones cognitivas surgen por la interacción con supuestos sobre el mundo, lo que lleva a &ldquo;inferencias inconscientes&rdquo;, una idea sugerida por primera vez en el siglo XIX por el físico y médico alemán Hermann Helmholtz.
-Las ilusiones pueden basarse en la capacidad de un individuo para ver en tres dimensiones, aunque la imagen que llega a la retina es solo bidimensional.">
+<meta property="og:description" content="Rasterización de Circunferencias #  Para la rasterización de una circunferencia podemos calcular los puntos que van a hacer parte del borde en un único octante y simultaneamente añadir de forma análoga los puntos de los otros octantes, en la animación aquí presentada el único octante que se calcula de forma directa es el de color verde y los demás son añadidos en base a dicho cálculo.
+El proceso comienza en el punto P=(0,r), a partir de allí en cada iteración se va calculando el punto correspondiente al octante verde si se aumenta la coordenada x, Dado que al aumentar x en uno (++P.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://dsramirezc.github.io/vc/docs/shortcodes/Rendering/rasterizing/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2021-12-12T01:34:50-05:00">
+<meta property="article:modified_time" content="2021-12-12T16:24:17-05:00">
 <title>Rasterizing | Visual Computing</title>
 <link rel=manifest href=/vc/manifest.json>
 <link rel=icon href=/vc/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/vc/book.min.89a77f7e702a8626749b948bbfb01109823daf6c1246ca407d1378833494c402.css integrity="sha256-iad/fnAqhiZ0m5SLv7ARCYI9r2wSRspAfRN4gzSUxAI=" crossorigin=anonymous>
 <script defer src=/vc/flexsearch.min.js></script>
-<script defer src=/vc/en.search.min.a750814e697e183d883290e0657e5ac97372f25fa0ba554e156c7d3d7963758e.js integrity="sha256-p1CBTml+GD2IMpDgZX5ayXNy8l+gulVOFWx9PXljdY4=" crossorigin=anonymous></script>
+<script defer src=/vc/en.search.min.9b175ec68d164e932024efe3f2396dc1e677f3fdd499d9a4866c1b44d9c7e558.js integrity="sha256-mxdexo0WTpMgJO/j8jltweZ38/3UmdmkhmwbRNnH5Vg=" crossorigin=anonymous></script>
 </head>
 <body dir=ltr>
 <input type=checkbox class="hidden toggle" id=menu-control>
@@ -128,28 +126,37 @@ Blog
 <ul>
 <li>
 <ul>
-<li><a href=#ilusión-cognitiva-de-percepción-de-profundidad>Ilusión Cognitiva de Percepción de Profundidad</a></li>
+<li><a href=#rasterización-de-circunferencias>Rasterización de Circunferencias</a></li>
 </ul>
 </li>
 </ul>
 </nav>
 </aside>
 </header>
-<article class=markdown><h2 id=ilusión-cognitiva-de-percepción-de-profundidad>
-Ilusión Cognitiva de Percepción de Profundidad
-<a class=anchor href=#ilusi%c3%b3n-cognitiva-de-percepci%c3%b3n-de-profundidad>#</a>
+<article class=markdown><h2 id=rasterización-de-circunferencias>
+Rasterización de Circunferencias
+<a class=anchor href=#rasterizaci%c3%b3n-de-circunferencias>#</a>
 </h2>
-<p>Ésta ilusión fué inspirada por éste <a href="https://www.youtube.com/watch?v=BmuhsXAbsB0">vídeo</a></p>
-<p>Las ilusiones cognitivas surgen por la interacción con supuestos sobre el mundo, lo que lleva a &ldquo;inferencias inconscientes&rdquo;, una idea sugerida por primera vez en el siglo XIX por el físico y médico alemán Hermann Helmholtz.</p>
-<p>Las ilusiones pueden basarse en la capacidad de un individuo para ver en tres dimensiones, aunque la imagen que llega a la retina es solo bidimensional. En ésta ilusión podemos observar cómo el cuadrado del centro parece sobresalir de los demás</p>
+<p>Para la rasterización de una circunferencia podemos calcular los puntos que van a hacer parte del borde en un único octante y simultaneamente añadir de forma análoga los puntos de los otros octantes, en la animación aquí presentada el único octante que se calcula de forma directa es el de color verde y los demás son añadidos en base a dicho cálculo.</p>
+<p>El proceso comienza en el punto <code>P=(0,r)</code>, a partir de allí en cada iteración se va calculando el punto correspondiente al octante verde si se aumenta la coordenada x, Dado que al aumentar x en uno <code>(++P.x)</code> el valor de <code>P.y</code> puede o bien permanecer igual o bien disminuir en uno, la decisión se reduce a determinar cuál de los puntos <code>(P.x+1,P.y)</code> ó <code>(P.x+1,P.y-1)</code> es el mejor candidato para estar en la circunferencia.</p>
+<p>Para determinar cuál es el mejor candidato se pueden usar diferentes reglas, la aquí presentada se inclina por el punto que tenga el menor error absoluto</p>
+<div class="book-columns flex flex-wrap">
+<div class="flex-even markdown-inner">
+<link rel=stylesheet href=/vc/katex/katex.min.css>
+<script defer src=/vc/katex/katex.min.js></script>
+<script defer src=/vc/katex/auto-render.min.js onload=renderMathInElement(document.body)></script><span>
+\[error = | r^2 - x^2 - y^2 |\]
+</span>
+</div>
+</div>
 <script src=https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js></script>
 <script src=https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js></script>
 <div id=rasterizing></div>
-<script>new p5(b=>{var h,g,f,a,c,d,e,j,k;const i=630;h=0,b.setup=function(){canvas=b.createCanvas(i,i),b.noStroke(),j=b.createSlider(20,500,60,10),j.position(canvas.position().x+10,canvas.position().y+i),j.style('width','290px'),k=b.createSlider(10,40,30,1),k.position(canvas.position().x+i-300,canvas.position().y+i),k.style('width','290px')},reset=function(){b.background(250),h=1,g=j.value(),f=Math.floor(g*k.value()/100),e=f,d=0,a=i/g,c=Math.floor(g/2)},b.draw=function(){var i,l;if(g!=j.value()&&reset(),f!=Math.floor(g*k.value()/100)&&reset(),++h,h==0&&reset(),h<0)return;if(h%Math.ceil(300/g))return;if(b.fill(200),b.square(c*a,c*a,a),b.square((c+f)*a,c*a,a),b.square((c-f)*a,c*a,a),b.square(c*a,(c+f)*a,a),b.square(c*a,(c-f)*a,a),i=f*f-(d+1)*(d+1)-e*e,l=f*f-(d+1)*(d+1)-(e-1)*(e-1),Math.abs(l)<Math.abs(i)&&--e,++d,d>e){h=-130;return}b.fill(0,245,0),b.square((c+d)*a,(c+e)*a,a),b.fill(245,245,0),b.square((c+e)*a,(c+d)*a,a),b.fill(245,127,0),b.square((c+e)*a,(c-d)*a,a),b.fill(245,0,0),b.square((c+d)*a,(c-e)*a,a),b.fill(245,0,245),b.square((c-d)*a,(c-e)*a,a),b.fill(148,0,211),b.square((c-e)*a,(c-d)*a,a),b.fill(75,0,130),b.square((c-e)*a,(c+d)*a,a),b.fill(0,0,245),b.square((c-d)*a,(c+e)*a,a)}},"rasterizing")</script>
+<script>new p5(b=>{var h,g,f,a,c,d,e,j,k;const i=630;h=0,b.setup=function(){canvas=b.createCanvas(i,i),b.noStroke(),j=b.createSlider(20,500,60,10),j.position(canvas.position().x+10,canvas.position().y+i),j.style('width','290px'),k=b.createSlider(10,40,30,1),k.position(canvas.position().x+i-300,canvas.position().y+i),k.style('width','290px')},reset=function(){b.background(250),h=1,g=j.value(),f=Math.floor(g*k.value()/100),e=f,d=0,a=i/g,c=Math.floor(g/2)},b.draw=function(){var i,l;if(g!=j.value()&&reset(),f!=Math.floor(g*k.value()/100)&&reset(),++h,h==0&&reset(),h<0)return;if(h%Math.ceil(500/g))return;if(b.fill(200),b.square(c*a,c*a,a),b.square((c+f)*a,c*a,a),b.square((c-f)*a,c*a,a),b.square(c*a,(c+f)*a,a),b.square(c*a,(c-f)*a,a),i=f*f-(d+1)*(d+1)-e*e,l=f*f-(d+1)*(d+1)-(e-1)*(e-1),Math.abs(l)<Math.abs(i)&&--e,++d,d>e){h=-130;return}b.fill(0,245,0),b.square((c+d)*a,(c+e)*a,a),b.fill(245,245,0),b.square((c+e)*a,(c+d)*a,a),b.fill(245,127,0),b.square((c+e)*a,(c-d)*a,a),b.fill(245,0,0),b.square((c+d)*a,(c-e)*a,a),b.fill(245,0,245),b.square((c-d)*a,(c-e)*a,a),b.fill(148,0,211),b.square((c-e)*a,(c-d)*a,a),b.fill(75,0,130),b.square((c-e)*a,(c+d)*a,a),b.fill(0,0,245),b.square((c-d)*a,(c+e)*a,a)}},"rasterizing")</script>
 </article>
 <footer class=book-footer>
 <div class="flex flex-wrap justify-between">
-<div><a class="flex align-center" href=https://dsramirezc.github.io/vc/commit/e5eca61a747ccd6458748abec8d901c3d9c70547 title="Last modified by joacarrilloco | December 12, 2021" target=_blank rel=noopener>
+<div><a class="flex align-center" href=https://dsramirezc.github.io/vc/commit/249c6a641c8ea2728eb4e335dae08fbb7a5ec694 title="Last modified by joacarrilloco | December 12, 2021" target=_blank rel=noopener>
 <img src=/vc/svg/calendar.svg class=book-icon alt=Calendar>
 <span>December 12, 2021</span>
 </a>
@@ -167,7 +174,7 @@ Ilusión Cognitiva de Percepción de Profundidad
 <ul>
 <li>
 <ul>
-<li><a href=#ilusión-cognitiva-de-percepción-de-profundidad>Ilusión Cognitiva de Percepción de Profundidad</a></li>
+<li><a href=#rasterización-de-circunferencias>Rasterización de Circunferencias</a></li>
 </ul>
 </li>
 </ul>
