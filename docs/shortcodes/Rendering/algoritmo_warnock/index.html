@@ -1,0 +1,175 @@
+<!doctype html><html lang=en dir=ltr>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content="Algoritmo de Warnok #  El algoritmo de warnock hace parte de los algoritmos de visibilidad y su enfoque esta en renderizar la imagen, dado que tambien existen metodos de ray-tracing. Este algoritmo pertenece a los HSR (Hidden surface removal algorithms), de los cuales buscan pintar imagenes que solo nos permiten ver lo visible sin importar si están entrecruzadas o superpuestas los objetos geométricos que se encuentran en ella. Existen otra variedad de algoritmos como, el algoritmo del pintor, BSP (Binary Space Partitioning), el Z-buffer, el ray-tracing para superficies poliédricas y cuádricas, algoritmo watkins o conocido como el barrido incremental.">
+<meta name=theme-color content="#FFFFFF">
+<meta name=color-scheme content="light dark"><meta property="og:title" content>
+<meta property="og:description" content="Algoritmo de Warnok #  El algoritmo de warnock hace parte de los algoritmos de visibilidad y su enfoque esta en renderizar la imagen, dado que tambien existen metodos de ray-tracing. Este algoritmo pertenece a los HSR (Hidden surface removal algorithms), de los cuales buscan pintar imagenes que solo nos permiten ver lo visible sin importar si están entrecruzadas o superpuestas los objetos geométricos que se encuentran en ella. Existen otra variedad de algoritmos como, el algoritmo del pintor, BSP (Binary Space Partitioning), el Z-buffer, el ray-tracing para superficies poliédricas y cuádricas, algoritmo watkins o conocido como el barrido incremental.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://dsramirezc.github.io/vc/docs/shortcodes/Rendering/algoritmo_warnock/"><meta property="article:section" content="docs">
+<meta property="article:modified_time" content="2021-12-12T23:10:01-05:00">
+<title>Algoritmo Warnock | Visual Computing</title>
+<link rel=manifest href=/vc/manifest.json>
+<link rel=icon href=/vc/favicon.png type=image/x-icon>
+<link rel=stylesheet href=/vc/book.min.89a77f7e702a8626749b948bbfb01109823daf6c1246ca407d1378833494c402.css integrity="sha256-iad/fnAqhiZ0m5SLv7ARCYI9r2wSRspAfRN4gzSUxAI=" crossorigin=anonymous>
+<script defer src=/vc/flexsearch.min.js></script>
+<script defer src=/vc/en.search.min.52dd0c66571e691021a343bfab7cecb140730540acb2a11e9dfd28bd4bc1b56e.js integrity="sha256-Ut0MZlceaRAho0O/q3zssUBzBUCssqEenf0ovUvBtW4=" crossorigin=anonymous></script>
+</head>
+<body dir=ltr>
+<input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control>
+<main class="container flex">
+<aside class=book-menu>
+<div class=book-menu-content>
+<nav>
+<h2 class=book-brand>
+<a class="flex align-center" href=/vc/><span>Visual Computing</span>
+</a>
+</h2>
+<div class=book-search>
+<input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/>
+<div class="book-search-spinner hidden"></div>
+<ul id=book-search-results></ul>
+</div>
+<ul>
+<li class=book-section-flat>
+<span>Shortcodes</span>
+<ul>
+<li>
+<input type=checkbox id=section-57125a0754b79aa328c8c72a99bebc94 class=toggle>
+<label for=section-57125a0754b79aa328c8c72a99bebc94 class="flex justify-between">
+<a href=https://dsramirezc.github.io/vc/docs/shortcodes/Ilusiones/>Ilusiones</a>
+</label>
+<ul>
+<li>
+<a href=https://dsramirezc.github.io/vc/docs/shortcodes/Ilusiones/ilusion1/>Ilusion1</a>
+</li>
+<li>
+<a href=https://dsramirezc.github.io/vc/docs/shortcodes/Ilusiones/ilusion2/>Ilusion2</a>
+</li>
+<li>
+<a href=https://dsramirezc.github.io/vc/docs/shortcodes/Ilusiones/ilusion3/>Ilusion3</a>
+</li>
+</ul>
+</li>
+<li>
+<input type=checkbox id=section-ec67a64aba70b9df3d2a9acd6c92e3bc class=toggle>
+<label for=section-ec67a64aba70b9df3d2a9acd6c92e3bc class="flex justify-between">
+<a href=https://dsramirezc.github.io/vc/docs/shortcodes/p5/>P5</a>
+</label>
+<ul>
+<li>
+<a href=https://dsramirezc.github.io/vc/docs/shortcodes/p5/div/>Div</a>
+</li>
+<li>
+<a href=https://dsramirezc.github.io/vc/docs/shortcodes/p5/iframe/>Iframe</a>
+</li>
+</ul>
+</li>
+<li>
+<a href=https://dsramirezc.github.io/vc/docs/shortcodes/Rendering/algoritmo_warnock/ class=active>Algoritmo Warnock</a>
+</li>
+<li>
+<a href=https://dsramirezc.github.io/vc/docs/shortcodes/Rendering/rasterizing/>Rasterizing</a>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<a href=/vc/posts/>
+Blog
+</a>
+</li>
+</ul>
+</nav>
+<script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+</div>
+</aside>
+<div class=book-page>
+<header class=book-header>
+<div class="flex align-center justify-between">
+<label for=menu-control>
+<img src=/vc/svg/menu.svg class=book-icon alt=Menu>
+</label>
+<strong>Algoritmo Warnock</strong>
+<label for=toc-control>
+<img src=/vc/svg/toc.svg class=book-icon alt="Table of Contents">
+</label>
+</div>
+<aside class="hidden clearfix">
+<nav id=TableOfContents>
+<ul>
+<li>
+<ul>
+<li><a href=#algoritmo-de-warnok>Algoritmo de Warnok</a>
+<ul>
+<li><a href=#procedimiento>Procedimiento</a></li>
+<li><a href=#ventajas>Ventajas</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</aside>
+</header>
+<article class=markdown><h2 id=algoritmo-de-warnok>
+Algoritmo de Warnok
+<a class=anchor href=#algoritmo-de-warnok>#</a>
+</h2>
+<p>El algoritmo de warnock hace parte de los algoritmos de visibilidad y su enfoque esta en renderizar la imagen, dado que tambien existen metodos de ray-tracing. Este algoritmo pertenece a los HSR (Hidden surface removal algorithms), de los cuales buscan pintar imagenes que solo nos permiten ver lo visible sin importar si están entrecruzadas o superpuestas los objetos geométricos que se encuentran en ella. Existen otra variedad de algoritmos como, el algoritmo del pintor, BSP (Binary Space Partitioning), el Z-buffer, el ray-tracing para superficies poliédricas y cuádricas, algoritmo watkins o conocido como el barrido incremental.</p>
+<p><img src=http://medialab.di.unipi.it/web/IUM/Waterloo/img399.gif alt="Alt text"></p>
+<h3 id=procedimiento>
+Procedimiento
+<a class=anchor href=#procedimiento>#</a>
+</h3>
+<p>El algoritmo warnock es un algoritmo que hace uso del famoso “divide y vencerás”, aplica métodos recursivos para identificar casos bases y llegado a ese punto renderiza o pinta en la pantalla el objeto o en este caso el polígono que pretendemos pasar a pixeles, existen cuatro posibles relaciones entre polígonos y elementos de área, estos son:</p>
+<p><img src=https://www.cs.uic.edu/~jbell/CourseNotes/ComputerGraphics/diagrams/wartypes.gif alt="Alt text"></p>
+<p>Como se puede ver en la figura 1, en el primer caso nuestro marco de subdivisión debe contener completamente al objeto, en el caso 2 la intersección se ve cuando contiene parte del objeto, en el caso tres el marco no contiene absolutamente nada y en el último escenario el marco se encuentra completamente dentro del objeto o polígono.</p>
+<p>El algoritmo de warnock es una de las soluciones que se encuentran en el enfoque de “visibilidad” y su resultado que son rectángulos(bloques) de píxeles, se encarga de dar una mejor visibilidad por cada respectivo cuadrante que llegó a subdividirse, a su vez este se considera que tiene precisión de imagen, dado a que se calcula el polígono visible en cada bloque.</p>
+<p>Para usar este algoritmo inicialmente necesitamos dos parámetros, una lista de polígonos y la vista inicial que comprende todos los polígonos que se pueden encontrar en el “canvas”. Después de haber recibido los parámetros el algoritmo mira si es posible darle solución al marco de vista que se está enfocando actualmente dado a los casos base, si es así entonces este pintara en pantalla los píxeles de la imagen, en caso contrario se dividirá el rectángulo actual en cuatro partes y cada una de ellas se le aplica el algoritmo warnock de nuevo, de manera recursiva.</p>
+<p><img src=https://i.imgur.com/fnOlRKZ.png alt="Alt text"></p>
+<h3 id=ventajas>
+Ventajas
+<a class=anchor href=#ventajas>#</a>
+</h3>
+<p>Sigue la estrategia de divide y vencerás. Por lo tanto, se pueden usar computacion paralela para acelerar el proceso.</p>
+<p>No se requiere búfer de memoria adicional.</p>
+</article>
+<footer class=book-footer>
+<div class="flex flex-wrap justify-between">
+<div><a class="flex align-center" href=https://dsramirezc.github.io/vc/commit/b231c14852a7261d4e8df441cfcb5774b798d3c2 title="Last modified by stephan.ramirez | December 13, 2021" target=_blank rel=noopener>
+<img src=/vc/svg/calendar.svg class=book-icon alt=Calendar>
+<span>December 13, 2021</span>
+</a>
+</div>
+</div>
+<script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+</footer>
+<div class=book-comments>
+</div>
+<label for=menu-control class="hidden book-menu-overlay"></label>
+</div>
+<aside class=book-toc>
+<div class=book-toc-content>
+<nav id=TableOfContents>
+<ul>
+<li>
+<ul>
+<li><a href=#algoritmo-de-warnok>Algoritmo de Warnok</a>
+<ul>
+<li><a href=#procedimiento>Procedimiento</a></li>
+<li><a href=#ventajas>Ventajas</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</aside>
+</main>
+</body>
+</html>
