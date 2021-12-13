@@ -2,7 +2,7 @@
 
 El algoritmo de warnock hace parte de los algoritmos de visibilidad y su enfoque esta en renderizar la imagen, dado que tambien existen metodos de ray-tracing. Este algoritmo pertenece a los HSR (Hidden surface removal algorithms), de los cuales buscan pintar imagenes que solo nos permiten ver lo visible sin importar si están entrecruzadas o superpuestas los objetos geométricos que se encuentran en ella. Existen otra variedad de algoritmos como, el algoritmo del pintor, BSP (Binary Space Partitioning), el Z-buffer, el ray-tracing para superficies poliédricas y cuádricas, algoritmo watkins o conocido como el barrido incremental.
 
-![Alt text](http://medialab.di.unipi.it/web/IUM/Waterloo/img399.gif)
+![Alt text](http://what-when-how.com/wp-content/uploads/2012/06/tmp3189329_thumb.png)
 ### Procedimiento
 
 El algoritmo warnock es un algoritmo que hace uso del famoso “divide y vencerás”, aplica métodos recursivos para identificar casos bases y llegado a ese punto renderiza o pinta en la pantalla el objeto o en este caso el polígono que pretendemos pasar a pixeles, existen cuatro posibles relaciones entre polígonos y elementos de área, estos son:
