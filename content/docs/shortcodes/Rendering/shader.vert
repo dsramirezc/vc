@@ -1,48 +1,35 @@
+/*
+vert file and comments from adam ferriss
+https://github.com/aferriss/p5jsShaderExamples
+with additional comments from Louise Lessel
+*/ 
+
+
+// These are necessary definitions that let you graphics card know how to render the shader
+#ifdef GL_ES
 precision mediump float;
+#endif
 
-uniform sampler2D texture;
-// Note that the image texOffset may be emitted by p5.shaderbox:
-// https://github.com/VisualComputing/p5.shaderbox/#emittexoffset
-uniform vec2 texOffset;
-// holds the 3x3 kernel
-uniform float mask[9];
 
-// we need our interpolated color
-varying vec4 vVertexColor;
-// we need our interpolated tex coord
-varying vec2 vTexCoord;
+// This “vec3 aPosition” is a built in shader functionality. You must keep that naming.
+// It automatically gets the position of every vertex on your canvas
+
+attribute vec3 aPosition;
+
+// We always must do at least one thing in the vertex shader:
+// tell the pixel where on the screen it lives:
 
 void main() {
-  // 1. Use offset to move along texture space.
-  // In this case to find the indeces of the texel neighbours.
-  vec2 tc0 = vTexCoord + vec2(-texOffset.s, -texOffset.t);
-  vec2 tc1 = vTexCoord + vec2(         0.0, -texOffset.t);
-  vec2 tc2 = vTexCoord + vec2(+texOffset.s, -texOffset.t);
-  vec2 tc3 = vTexCoord + vec2(-texOffset.s,          0.0);
-  vec2 tc4 = vTexCoord + vec2(         0.0,          0.0);
-  vec2 tc5 = vTexCoord + vec2(+texOffset.s,          0.0);
-  vec2 tc6 = vTexCoord + vec2(-texOffset.s, +texOffset.t);
-  vec2 tc7 = vTexCoord + vec2(         0.0, +texOffset.t);
-  vec2 tc8 = vTexCoord + vec2(+texOffset.s, +texOffset.t);
+  // copy the position data into a vec4, using 1.0 as the w component
+  vec4 positionVec4 = vec4(aPosition, 1.0);
+  
+  // Make sure the shader covers the entire screen:
+  // scale the rect by two, and move it to the center of the screen
+  // if we don't do this, it will appear with its bottom left corner in the center of the sketch
+  // try commenting this line out to see what happens
+  positionVec4.xy = positionVec4.xy * 2.0 - 1.0;
 
-  // 2. Sample texel neighbours within the rgba array
-  vec4 rgba[9];
-  rgba[0] = texture2D(texture, tc0);
-  rgba[1] = texture2D(texture, tc1);
-  rgba[2] = texture2D(texture, tc2);
-  rgba[3] = texture2D(texture, tc3);
-  rgba[4] = texture2D(texture, tc4);
-  rgba[5] = texture2D(texture, tc5);
-  rgba[6] = texture2D(texture, tc6);
-  rgba[7] = texture2D(texture, tc7);
-  rgba[8] = texture2D(texture, tc8);
-
-  // 3. Apply convolution kernel
-  vec4 convolution;
-  for (int i = 0; i < 9; i++) {
-    convolution += rgba[i]*mask[i];
-  }
-
-  // 4. Mix convolution & color
-  gl_FragColor = vec4(convolution.rgb, 1.0) * vVertexColor; 
+  // Send the vertex information on to the fragment shader
+  // this is done automatically, as long as you put it into the built in shader function “gl_Position”
+  gl_Position = positionVec4;
 }
