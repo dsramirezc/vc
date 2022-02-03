@@ -16,6 +16,50 @@ error = | r^2 - x^2 - y^2 |
 
 {{< p5-instance-div id="rasterizing" >}}
 
+let theShader;
+theShader = p5.loadShader("shader.vert", "shader.frag");
+
+let windowWidth=500;
+let windowHeight=500;
+let width=100;
+let heigth=100;
+p5.setup=function() {
+
+  // shaders require WEBGL mode to work
+
+  p5.createCanvas(windowWidth, windowHeight, p5.WEBGL);
+
+  p5.noStroke();
+  p5.background(250);
+
+}
+
+function draw() {
+
+  // shader() sets the active shader with our shader
+
+  shader(theShader);
+
+  // rect gives us some geometry on the screen
+
+  rect(0,0,width,height);
+
+  
+
+  // print out the framerate
+
+  //print(frameRate());
+
+}
+
+function windowResized(){
+
+  resizeCanvas(windowWidth, windowHeight);
+
+}
+
+
+/*
     const size = 630;
     var counter = 0;
     
@@ -121,5 +165,5 @@ error = | r^2 - x^2 - y^2 |
         p5.square( ( mid - x ) * step, ( mid + y ) * step, step );
     }
 
-
+*/
 {{< /p5-instance-div >}}
