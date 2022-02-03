@@ -10,13 +10,13 @@ El proceso comienza en el punto P=(0,r), a partir de allí en cada iteración se
 El proceso comienza en el punto P=(0,r), a partir de allí en cada iteración se va calculando el punto correspondiente al octante verde si se aumenta la coordenada x, Dado que al aumentar x en uno (++P.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://dsramirezc.github.io/vc/docs/shortcodes/Rendering/rasterizing/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2022-02-03T17:33:03-05:00">
+<meta property="article:modified_time" content="2022-02-03T18:39:09-05:00">
 <title>Rasterizing | Visual Computing</title>
 <link rel=manifest href=/vc/manifest.json>
 <link rel=icon href=/vc/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/vc/book.min.89a77f7e702a8626749b948bbfb01109823daf6c1246ca407d1378833494c402.css integrity="sha256-iad/fnAqhiZ0m5SLv7ARCYI9r2wSRspAfRN4gzSUxAI=" crossorigin=anonymous>
 <script defer src=/vc/flexsearch.min.js></script>
-<script defer src=/vc/en.search.min.9ddc38217116b563ce6d05a9f5057823dedb25431ad51d9403c4d57ca2616879.js integrity="sha256-ndw4IXEWtWPObQWp9QV4I97bJUMa1R2UA8TVfKJhaHk=" crossorigin=anonymous></script>
+<script defer src=/vc/en.search.min.1d1501e61bf4eb832c5023236fbdd092208d9c423b652280db45f6eec1a3faef.js integrity="sha256-HRUB5hv064MsUCMjb73QkiCNnEI7ZSKA20X27sGj+u8=" crossorigin=anonymous></script>
 </head>
 <body dir=ltr>
 <input type=checkbox class="hidden toggle" id=menu-control>
@@ -131,11 +131,11 @@ Rasterización de Circunferencias
 <script src=https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js></script>
 <script src=https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js></script>
 <div id=rasterizing></div>
-<script>new p5(a=>{let b;b=a.loadShader("shader.vert","shader.frag");let c=500,d=500,e=100,f=100;a.setup=function(){a.createCanvas(c,d,a.WEBGL),a.noStroke(),a.background(250)};function g(){shader(b),rect(0,0,e,height)}function h(){resizeCanvas(c,d)}},"rasterizing")</script>
+<script>new p5(a=>{let b;a.preload=function(){b=a.loadShader(`https://github.com/dsramirezc/vc/blob/main/content/docs/shortcodes/Rendering/shader.vert`,`https://github.com/dsramirezc/vc/blob/main/content/docs/shortcodes/Rendering/shader.frag`)};let c=500,d=500,e=100,f=100;a.setup=function(){a.createCanvas(c,d,a.WEBGL),a.noStroke(),a.background(250)};function g(){shader(b),rect(0,0,e,height)}function h(){resizeCanvas(c,d)}},"rasterizing")</script>
 </article>
 <footer class=book-footer>
 <div class="flex flex-wrap justify-between">
-<div><a class="flex align-center" href=https://dsramirezc.github.io/vc/commit/3b646ab5b9c3a063907079b73c272ca2d04ca53b title="Last modified by stephan.ramirez | February 3, 2022" target=_blank rel=noopener>
+<div><a class="flex align-center" href=https://dsramirezc.github.io/vc/commit/a8c437e64fe657c28614244e4100a39bb9a5d43b title="Last modified by Jonathan Carrillo | February 3, 2022" target=_blank rel=noopener>
 <img src=/vc/svg/calendar.svg class=book-icon alt=Calendar>
 <span>February 3, 2022</span>
 </a>
