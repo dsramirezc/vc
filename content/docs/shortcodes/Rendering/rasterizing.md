@@ -17,7 +17,11 @@ error = | r^2 - x^2 - y^2 |
 {{< p5-instance-div id="rasterizing" >}}
 
 let theShader;
-theShader = p5.loadShader("shader.vert", "shader.frag");
+
+p5.preload = function()
+{
+    theShader = p5.loadShader(`https://github.com/dsramirezc/vc/blob/main/content/docs/shortcodes/Rendering/shader.vert`, `https://github.com/dsramirezc/vc/blob/main/content/docs/shortcodes/Rendering/shader.frag`);
+}
 
 let windowWidth=500;
 let windowHeight=500;
