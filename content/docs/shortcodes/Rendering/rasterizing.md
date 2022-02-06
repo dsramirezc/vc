@@ -15,7 +15,9 @@ error = | r^2 - x^2 - y^2 |
 {{< /columns >}}
 
 
-{{< p5-iframe id="rasterizing" sketch= "/vc/sketches/photomosaic.js">}}
+{{< p5-iframe id="rasterizing1" sketch= "/vc/sketches/photomosaic.js">}}
 
 
 {{< p5-iframe id="rasterizing2" sketch= "/vc/sketches/photomosaic2.js">}}
+
+{{< p5-iframe id="rasterizing2" sketch= "/vc/sketches/photomosaic3.js">}}
