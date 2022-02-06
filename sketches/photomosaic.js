@@ -3,7 +3,8 @@ let H;
 let slider;
 let myShader;
 function preload() {
-    img = loadImage('/vc/sketches/mosaico.jpeg');
+    img = createVideo('/vc/sketches/video1.mp4');
+    img.hide();
     om = loadImage('/vc/sketches/img0.jpeg')
     myShader = loadShader("/vc/sketches/shader.vert", "/vc/sketches/shader.frag")
 }
@@ -15,9 +16,9 @@ function setup() {
     noStroke();
     shader(myShader);
     myShader.setUniform("img", img);
-    myShader.setUniform("om", om);
     slider = createSlider(2, 16, 40);
     slider.position(10, 10);
+    img.loop()
 }
 function draw() {
     let posSlider = slider.value();
