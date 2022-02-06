@@ -20,8 +20,7 @@ function setup() {
     noStroke();
     shader(myShader);
     myShader.setUniform("img", img);
-    myShader.setUniform("om", om);
-    myShader.setUniform("om_on", false);
+
 
 
     slider = createSlider(2, 16, 40);
