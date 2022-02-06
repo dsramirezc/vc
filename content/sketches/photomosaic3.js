@@ -3,8 +3,11 @@ let H;
 let slider;
 let myShader;
 let nImages;
+let enableVideo;
 function preload() {
-    img = loadImage('/vc/sketches/tourist.jpeg');
+    video = createVideo('/vc/sketches/video1.mp4');
+    video.hide();
+    img=loadImage('/vc/sketches/mosaico.jpeg')
     alpha0 = loadImage('/vc/sketches/img0.jpeg')
     alpha1 = loadImage('/vc/sketches/img1.jpeg')
     alpha2 = loadImage('/vc/sketches/img2.jpeg')
@@ -27,6 +30,21 @@ function compare(a,b){
   return a[0]-b[0];
 }
 function setup() {
+  enable_shader = createCheckbox('enable video', false);
+  enable_shader.style('color', 'magenta');
+  enable_shader.changed(() => {
+    if (enable_shader.checked()) {
+      console.log("Checked")
+      myShader.setUniform("texture", video);
+    } else {
+      console.log("no Checked")
+      myShader.setUniform("texture", img);
+
+
+
+    }
+  });
+  enable_shader.position(10, 50);
   console.log(images);
   W = 500;
   H = 500;
@@ -34,6 +52,7 @@ function setup() {
   textureMode(NORMAL);
   noStroke();
   shader(myShader);
+
   myShader.setUniform("texture", img);
   myShader.setUniform("nImages", float(nImages));
   console.log(alpha0.width,alpha0.height);
@@ -43,8 +62,8 @@ function setup() {
     let cnt=0;
     for(let i=0;i<images[ind].width;i+=5)
       for(let j=0;j<images[ind].height;j+=5){
-        //score+=0.333*images[ind].get(i,j)[0]+0.333*images[ind].get(i,j)[1]+0.333*images[ind].get(i,j)[2];
-        score+=0.299*images[ind].get(i,j)[0]+0.587*images[ind].get(i,j)[1]+0.114*images[ind].get(i,j)[2];
+        score+=0.333*images[ind].get(i,j)[0]+0.333*images[ind].get(i,j)[1]+0.333*images[ind].get(i,j)[2];
+        //score+=0.299*images[ind].get(i,j)[0]+0.587*images[ind].get(i,j)[1]+0.114*images[ind].get(i,j)[2];
 
         cnt++;
       }
@@ -52,9 +71,7 @@ function setup() {
   
     sortedImages.push([score,ind]);
   }
-  console.log(sortedImages);
   sortedImages=sortedImages.sort(compare);
-  console.log(sortedImages);
 
 
   for(let i = 0 ;i < nImages ;i++)
@@ -62,6 +79,7 @@ function setup() {
   
   slider = createSlider(2, 16, 40);
   slider.position(10, 10);
+  video.loop();
 }
 function draw() {
   let posSlider = slider.value();
