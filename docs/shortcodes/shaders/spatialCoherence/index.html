@@ -1,0 +1,275 @@
+<!doctype html><html lang=en dir=ltr>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content="Fotomosaico coherencia espacial #  Este mosaico esta basado en https://visualcomputing.github.io/docs/shaders/spatial_coherence/ para realizar el mosiaco necesitamos de un video o una imagen y otra imagen que sea la representacion del om, que va a ser el caracter con el cual vamos a realizar el mosaico si esta activada esta opción, cada sub parte de la imagen original al ser dividida nos dará una region de la imagen original que usaremos para mapear la nueva zona perteneciente al fotomosaico, con una nueva textura que se acoplé al color de la subparte analizada.">
+<meta name=theme-color content="#FFFFFF">
+<meta name=color-scheme content="light dark"><meta property="og:title" content>
+<meta property="og:description" content="Fotomosaico coherencia espacial #  Este mosaico esta basado en https://visualcomputing.github.io/docs/shaders/spatial_coherence/ para realizar el mosiaco necesitamos de un video o una imagen y otra imagen que sea la representacion del om, que va a ser el caracter con el cual vamos a realizar el mosaico si esta activada esta opción, cada sub parte de la imagen original al ser dividida nos dará una region de la imagen original que usaremos para mapear la nueva zona perteneciente al fotomosaico, con una nueva textura que se acoplé al color de la subparte analizada.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://dsramirezc.github.io/vc/docs/shortcodes/shaders/spatialCoherence/"><meta property="article:section" content="docs">
+<meta property="article:modified_time" content="2022-02-06T23:28:46-05:00">
+<title>Spatial Coherence | Visual Computing</title>
+<link rel=manifest href=/vc/manifest.json>
+<link rel=icon href=/vc/favicon.png type=image/x-icon>
+<link rel=stylesheet href=/vc/book.min.89a77f7e702a8626749b948bbfb01109823daf6c1246ca407d1378833494c402.css integrity="sha256-iad/fnAqhiZ0m5SLv7ARCYI9r2wSRspAfRN4gzSUxAI=" crossorigin=anonymous>
+<script defer src=/vc/flexsearch.min.js></script>
+<script defer src=/vc/en.search.min.d217601bcd6802e72c0a78fd1bffa7cdaef4fd6642eed491386578ff8564dfb8.js integrity="sha256-0hdgG81oAucsCnj9G/+nza70/WZC7tSROGV4/4Vk37g=" crossorigin=anonymous></script>
+</head>
+<body dir=ltr>
+<input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control>
+<main class="container flex">
+<aside class=book-menu>
+<div class=book-menu-content>
+<nav>
+<h2 class=book-brand>
+<a class="flex align-center" href=/vc/><span>Visual Computing</span>
+</a>
+</h2>
+<div class=book-search>
+<input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/>
+<div class="book-search-spinner hidden"></div>
+<ul id=book-search-results></ul>
+</div>
+<ul>
+<li class=book-section-flat>
+<span>Shortcodes</span>
+<ul>
+<li>
+<input type=checkbox id=section-57125a0754b79aa328c8c72a99bebc94 class=toggle>
+<label for=section-57125a0754b79aa328c8c72a99bebc94 class="flex justify-between">
+<a href=https://dsramirezc.github.io/vc/docs/shortcodes/Ilusiones/>Ilusiones</a>
+</label>
+<ul>
+<li>
+<a href=https://dsramirezc.github.io/vc/docs/shortcodes/Ilusiones/ilusion1/>Ilusion1</a>
+</li>
+<li>
+<a href=https://dsramirezc.github.io/vc/docs/shortcodes/Ilusiones/ilusion2/>Ilusion2</a>
+</li>
+<li>
+<a href=https://dsramirezc.github.io/vc/docs/shortcodes/Ilusiones/ilusion3/>Ilusion3</a>
+</li>
+</ul>
+</li>
+<li>
+<a href=https://dsramirezc.github.io/vc/docs/shortcodes/Rendering/algoritmo_warnock/>Algoritmo Warnock</a>
+</li>
+<li>
+<a href=https://dsramirezc.github.io/vc/docs/shortcodes/Rendering/rasterizing/>Rasterizing</a>
+</li>
+<li>
+<input type=checkbox id=section-6d6445ed16f829ce6720abb33c55105e class=toggle checked>
+<label for=section-6d6445ed16f829ce6720abb33c55105e class="flex justify-between">
+<a href=https://dsramirezc.github.io/vc/docs/shortcodes/shaders/>Shaders</a>
+</label>
+<ul>
+<li>
+<a href=https://dsramirezc.github.io/vc/docs/shortcodes/shaders/avg/>Avg</a>
+</li>
+<li>
+<a href=https://dsramirezc.github.io/vc/docs/shortcodes/shaders/luma/>Luma</a>
+</li>
+<li>
+<a href=https://dsramirezc.github.io/vc/docs/shortcodes/shaders/spatialCoherence/ class=active>Spatial Coherence</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<a href=/vc/posts/>
+Blog
+</a>
+</li>
+</ul>
+</nav>
+<script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+</div>
+</aside>
+<div class=book-page>
+<header class=book-header>
+<div class="flex align-center justify-between">
+<label for=menu-control>
+<img src=/vc/svg/menu.svg class=book-icon alt=Menu>
+</label>
+<strong>Spatial Coherence</strong>
+<label for=toc-control>
+<img src=/vc/svg/toc.svg class=book-icon alt="Table of Contents">
+</label>
+</div>
+<aside class="hidden clearfix">
+<nav id=TableOfContents>
+<ul>
+<li>
+<ul>
+<li><a href=#fotomosaico-coherencia-espacial>Fotomosaico coherencia espacial</a>
+<ul>
+<li><a href=#codigo-js>Codigo JS</a></li>
+<li><a href=#codigo-shaderfrag>Codigo shader.frag</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</aside>
+</header>
+<article class=markdown><h2 id=fotomosaico-coherencia-espacial>
+Fotomosaico coherencia espacial
+<a class=anchor href=#fotomosaico-coherencia-espacial>#</a>
+</h2>
+<p>Este mosaico esta basado en <a href=https://visualcomputing.github.io/docs/shaders/spatial_coherence/>https://visualcomputing.github.io/docs/shaders/spatial_coherence/</a> para realizar el mosiaco necesitamos de un video o una imagen y otra imagen que sea la representacion del om, que va a ser el caracter con el cual vamos a realizar el mosaico si esta activada esta opción, cada sub parte de la imagen original al ser dividida nos dará una region de la imagen original que usaremos para mapear la nueva zona perteneciente al fotomosaico, con una nueva textura que se acoplé al color de la subparte analizada.</p>
+<iframe id=photomosaic style=width:800px;height:600px srcdoc="
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <script src=https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js></script>
+            <script src=https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js></script>
+            
+            
+            
+            
+            
+            <script src=/vc/sketches/photomosaic.js></script>
+          </head>
+          <body>
+          </body>
+        </html>
+      "></iframe>
+<h3 id=codigo-js>
+Codigo JS
+<a class=anchor href=#codigo-js>#</a>
+</h3>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>W</span>;
+<span style=color:#66d9ef>let</span> <span style=color:#a6e22e>H</span>;
+<span style=color:#66d9ef>let</span> <span style=color:#a6e22e>slider</span>;
+<span style=color:#66d9ef>let</span> <span style=color:#a6e22e>myShader</span>;
+<span style=color:#66d9ef>function</span> <span style=color:#a6e22e>preload</span>() {
+  <span style=color:#a6e22e>video</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>createVideo</span>(<span style=color:#e6db74>&#39;/vc/sketches/video1.mp4&#39;</span>);
+  <span style=color:#a6e22e>video</span>.<span style=color:#a6e22e>hide</span>();
+  <span style=color:#a6e22e>img</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>loadImage</span>(<span style=color:#e6db74>&#39;/vc/sketches/mosaico.jpeg&#39;</span>);
+  <span style=color:#a6e22e>om</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>loadImage</span>(<span style=color:#e6db74>&#39;/vc/sketches/om.png&#39;</span>);
+  <span style=color:#a6e22e>myShader</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>loadShader</span>(<span style=color:#e6db74>&#34;/vc/sketches/shader.vert&#34;</span>, <span style=color:#e6db74>&#34;/vc/sketches/shader.frag&#34;</span>)
+}
+<span style=color:#66d9ef>function</span> <span style=color:#a6e22e>setup</span>() {
+  <span style=color:#a6e22e>enable_video</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>createCheckbox</span>(<span style=color:#e6db74>&#39;video&#39;</span>, <span style=color:#66d9ef>false</span>);
+  <span style=color:#a6e22e>enable_video</span>.<span style=color:#a6e22e>style</span>(<span style=color:#e6db74>&#39;color&#39;</span>, <span style=color:#e6db74>&#39;magenta&#39;</span>);
+  <span style=color:#a6e22e>enable_video</span>.<span style=color:#a6e22e>changed</span>(() =&gt; {
+    <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>enable_video</span>.<span style=color:#a6e22e>checked</span>()) {
+      <span style=color:#a6e22e>myShader</span>.<span style=color:#a6e22e>setUniform</span>(<span style=color:#e6db74>&#34;img&#34;</span>, <span style=color:#a6e22e>video</span>);
+      <span style=color:#a6e22e>video</span>.<span style=color:#a6e22e>loop</span>();
+    } <span style=color:#66d9ef>else</span> {
+      <span style=color:#a6e22e>myShader</span>.<span style=color:#a6e22e>setUniform</span>(<span style=color:#e6db74>&#34;img&#34;</span>, <span style=color:#a6e22e>img</span>);
+    }
+  });
+  <span style=color:#a6e22e>enable_video</span>.<span style=color:#a6e22e>position</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>50</span>);
+  <span style=color:#a6e22e>enable_om</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>createCheckbox</span>(<span style=color:#e6db74>&#39;om&#39;</span>, <span style=color:#66d9ef>false</span>);
+  <span style=color:#a6e22e>enable_om</span>.<span style=color:#a6e22e>style</span>(<span style=color:#e6db74>&#39;color&#39;</span>, <span style=color:#e6db74>&#39;magenta&#39;</span>);
+  <span style=color:#a6e22e>enable_om</span>.<span style=color:#a6e22e>changed</span>(() =&gt; {
+    <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>enable_om</span>.<span style=color:#a6e22e>checked</span>()) {
+      <span style=color:#a6e22e>myShader</span>.<span style=color:#a6e22e>setUniform</span>(<span style=color:#e6db74>&#34;om_on&#34;</span>, <span style=color:#66d9ef>true</span>);
+    } <span style=color:#66d9ef>else</span> {
+      <span style=color:#a6e22e>myShader</span>.<span style=color:#a6e22e>setUniform</span>(<span style=color:#e6db74>&#34;om_on&#34;</span>, <span style=color:#66d9ef>false</span>);
+    }
+  });
+  <span style=color:#a6e22e>enable_om</span>.<span style=color:#a6e22e>position</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>100</span>);
+  <span style=color:#a6e22e>W</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>750</span>;
+  <span style=color:#a6e22e>H</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>570</span>;
+  <span style=color:#a6e22e>createCanvas</span>(<span style=color:#a6e22e>W</span>, <span style=color:#a6e22e>H</span>, <span style=color:#a6e22e>WEBGL</span>);
+  <span style=color:#a6e22e>textureMode</span>(<span style=color:#a6e22e>NORMAL</span>);
+  <span style=color:#a6e22e>noStroke</span>();
+  <span style=color:#a6e22e>shader</span>(<span style=color:#a6e22e>myShader</span>);
+  <span style=color:#a6e22e>myShader</span>.<span style=color:#a6e22e>setUniform</span>(<span style=color:#e6db74>&#34;img&#34;</span>, <span style=color:#a6e22e>img</span>);
+  <span style=color:#a6e22e>myShader</span>.<span style=color:#a6e22e>setUniform</span>(<span style=color:#e6db74>&#34;om&#34;</span>, <span style=color:#a6e22e>om</span>);
+  <span style=color:#a6e22e>slider</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>createSlider</span>(<span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>16</span>, <span style=color:#ae81ff>10000</span>);
+  <span style=color:#a6e22e>slider</span>.<span style=color:#a6e22e>position</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>10</span>);
+}
+<span style=color:#66d9ef>function</span> <span style=color:#a6e22e>draw</span>() {
+  <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>posSlider</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>slider</span>.<span style=color:#a6e22e>value</span>();
+  <span style=color:#a6e22e>myShader</span>.<span style=color:#a6e22e>setUniform</span>(<span style=color:#e6db74>&#34;resolution&#34;</span>, parseInt(<span style=color:#ae81ff>300</span> <span style=color:#f92672>/</span> <span style=color:#a6e22e>posSlider</span>));
+  <span style=color:#a6e22e>beginShape</span>();
+  <span style=color:#a6e22e>vertex</span>(<span style=color:#f92672>-</span><span style=color:#a6e22e>W</span> <span style=color:#f92672>/</span> <span style=color:#ae81ff>2</span>, <span style=color:#f92672>-</span><span style=color:#a6e22e>H</span> <span style=color:#f92672>/</span> <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>);
+  <span style=color:#a6e22e>vertex</span>(<span style=color:#a6e22e>W</span> <span style=color:#f92672>/</span> <span style=color:#ae81ff>2</span>, <span style=color:#f92672>-</span><span style=color:#a6e22e>H</span> <span style=color:#f92672>/</span> <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>0</span>);
+  <span style=color:#a6e22e>vertex</span>(<span style=color:#a6e22e>W</span> <span style=color:#f92672>/</span> <span style=color:#ae81ff>2</span>, <span style=color:#a6e22e>H</span> <span style=color:#f92672>/</span> <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>1</span>);
+  <span style=color:#a6e22e>vertex</span>(<span style=color:#f92672>-</span><span style=color:#a6e22e>W</span> <span style=color:#f92672>/</span> <span style=color:#ae81ff>2</span>, <span style=color:#a6e22e>H</span> <span style=color:#f92672>/</span> <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>1</span>);
+  <span style=color:#a6e22e>endShape</span>();
+}
+</code></pre></div><h3 id=codigo-shaderfrag>
+Codigo shader.frag
+<a class=anchor href=#codigo-shaderfrag>#</a>
+</h3>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c++ data-lang=c++>precision mediump <span style=color:#66d9ef>float</span>;
+
+<span style=color:#75715e>// img (image or video) is sent by the sketch
+</span><span style=color:#75715e></span>uniform sampler2D img;
+<span style=color:#75715e>// om is sent by the sketch
+</span><span style=color:#75715e></span>uniform sampler2D om;
+<span style=color:#75715e>// toggles om display
+</span><span style=color:#75715e></span>uniform <span style=color:#66d9ef>bool</span> om_on;
+<span style=color:#75715e>// target horizontal &amp; vertical resolution
+</span><span style=color:#75715e></span>uniform <span style=color:#66d9ef>float</span> resolution;
+
+<span style=color:#75715e>// interpolated color (same name and type as in vertex shader)
+</span><span style=color:#75715e></span>varying vec4 vVertexColor;
+<span style=color:#75715e>// interpolated texcoord (same name and type as in vertex shader)
+</span><span style=color:#75715e></span>varying vec2 vTexCoord;
+
+<span style=color:#66d9ef>void</span> <span style=color:#a6e22e>main</span>() {
+  <span style=color:#75715e>// remap omCoord to [0.0, resolution] ∈ R
+</span><span style=color:#75715e></span>  vec2 omCoord <span style=color:#f92672>=</span> vTexCoord <span style=color:#f92672>*</span> resolution;
+  <span style=color:#75715e>// remap imgCoord to [0.0, resolution] ∈ Z
+</span><span style=color:#75715e></span>  vec2 imgCoord <span style=color:#f92672>=</span> floor(omCoord);
+  <span style=color:#75715e>// remap omCoord to [0.0, 1.0] ∈ R
+</span><span style=color:#75715e></span>  omCoord <span style=color:#f92672>=</span> omCoord <span style=color:#f92672>-</span> imgCoord;
+  <span style=color:#75715e>// remap imgCoord to [0.0, 1.0] ∈ R
+</span><span style=color:#75715e></span>  imgCoord <span style=color:#f92672>=</span> imgCoord <span style=color:#f92672>/</span> vec2(resolution);
+  <span style=color:#75715e>// image texel (may be used as color hash key, e.g., photomosaic)
+</span><span style=color:#75715e></span>  vec4 imgTexel <span style=color:#f92672>=</span> texture2D(img, imgCoord);
+  <span style=color:#66d9ef>if</span>(om_on) {
+    vec4 omTexel <span style=color:#f92672>=</span> texture2D(om, omCoord);
+    gl_FragColor <span style=color:#f92672>=</span>  omTexel<span style=color:#f92672>*</span>imgTexel<span style=color:#f92672>*</span><span style=color:#ae81ff>2.0</span>;
+  }
+  <span style=color:#66d9ef>else</span> {
+    gl_FragColor <span style=color:#f92672>=</span> imgTexel;
+  }
+}
+</code></pre></div></article>
+<footer class=book-footer>
+<div class="flex flex-wrap justify-between">
+<div><a class="flex align-center" href=https://dsramirezc.github.io/vc/commit/455d4fe6b8e953d97091e7fc2ea304a13a97e359 title="Last modified by stephan.ramirez | February 7, 2022" target=_blank rel=noopener>
+<img src=/vc/svg/calendar.svg class=book-icon alt=Calendar>
+<span>February 7, 2022</span>
+</a>
+</div>
+</div>
+<script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+</footer>
+<div class=book-comments>
+</div>
+<label for=menu-control class="hidden book-menu-overlay"></label>
+</div>
+<aside class=book-toc>
+<div class=book-toc-content>
+<nav id=TableOfContents>
+<ul>
+<li>
+<ul>
+<li><a href=#fotomosaico-coherencia-espacial>Fotomosaico coherencia espacial</a>
+<ul>
+<li><a href=#codigo-js>Codigo JS</a></li>
+<li><a href=#codigo-shaderfrag>Codigo shader.frag</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</aside>
+</main>
+</body>
+</html>
