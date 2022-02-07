@@ -29,9 +29,8 @@ void main() {
     // obtener nivel de gris
     vec4 pixelColor = texture2D(texture, imageCoord);
     float mean = 0.299*pixelColor.r + 0.587*pixelColor.g +  0.114*pixelColor.b;
-    //float mean = 0.333*pixelColor.r + 0.3333*pixelColor.g +  0.333*pixelColor.b;
 
-    int index = int((mean * nImages+0.001));
+    int index = int(mean * nImages);
     //mean [0,0.15] =index =1
     if (index == 0){
         gl_FragColor = texture2D(alpha0, symbolCoord);
